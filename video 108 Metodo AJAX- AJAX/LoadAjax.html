@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efectos</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/LoadAjax.js"></script>
+
+    <style>
+        #caja{
+            width: 300px;
+            height: 300px;
+            border: 6px solid black;
+            text-align: center;
+            background: #ccc;
+            margin-top: 10px;
+            line-height: 50px;
+            color: black;
+            font-size: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            overflow: scroll;
+
+           
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Integrar jQuery aprendiendo - efectos  </h1>
+    <!-- https://reqres.in/api/users -->
+    <!-- https://reqres.in/api/register -->
+   
+    <form action="https://reqres.in/api/users" method="post" id="fomulario">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br><br>
+            <label for="web">Web</label>
+            <input type="text" name="web" id="web">
+            <br><br>
+            <label for="pass">pass</label>
+            <input type="password" name="pass" id="pass"><br><br>
+            <input type="submit" value="Guardar">
+    
+        </form>
+
+
+
+    <div id="caja">
+     
+    </div>
+
+    <p id="imagenes"></p>
+
+
+
+
+</body>
+</html>

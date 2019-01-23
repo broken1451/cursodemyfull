@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .caja1{
+        text-align: center;
+        width: 50%;
+        height: 50%;
+        float: left;
+    }
+
+    .caja2{
+
+        text-align: center;
+        width: 30%;
+        height: 50%;
+        display: none;
+        display: inline-block;
+        margin-top: 30px;
+        
+    }
+
+    .borde{
+        border: 3px solid saddlebrown;
+    }
+
+
+    </style>
+    
+    <!--Enunciado:
+        
+        1) Formulario campos: nombre,apellido y edad
+        2) Boton de enviar el formulario: evento submit
+        3) Mostrar datos por pantalla
+        4) Validar el formulario
+    -->
+
+<script src="js/EjerciciocompletoconelDOM,Eventosyfunciones1.js"></script>
+
+</head>
+<body>
+
+        <!-- 1) Formulario campos: nombre,apellido y edad-->
+        <div class="caja1">
+            <h1>Datos a enviar  y ver en pantalla</h1>
+            <form action="#" method="POST" onsubmit="return false" id="formulario1" >
+                <label for="">Nombre: </label>
+                <input type="text" name="nombre" id="nombre"><br><br>
+
+                <label for="">Apellido: </label>
+                <input type="text" name="apellido" id="apellido"><br><br>
+
+                <label for="">Edad: </label>
+                <input type="number" name="edad" id="edad"><br><br>
+                 
+                <!-- 2) Boton de enviar el formulario: evento submit-->
+                <input type="submit" name="enviar" id="submit">
+            </form>
+        </div>
+
+        <div class="caja2 borde">
+            <h2>Informacion</h3>
+            <hr> 
+            <p > Nombre: <span id="p_n"></span> </p>
+            <p > Apellido: <span id="p_a"></span> </p>
+            <p > Edad: <span id="p_e"></span> </p> 
+        </div>
+</body>
+</html>

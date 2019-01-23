@@ -1,0 +1,86 @@
+/*Estilos generales*/
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+
+
+body{
+    background: url("../img/hojas.jpg");
+    background-attachment: fixed;/*para que la imagen este fija*/
+}
+
+
+#global{
+    width:65%;  
+    margin: 0px auto;
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 4px #ccc;
+}
+
+
+#logo{
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    line-height: 80px;
+    background:#235e3d;
+    color:white;
+    text-align: center;
+    width: 385px;
+    height: 80px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.clearfix{
+    float: none;
+    clear: both;/*Limpiar los flotantes*/
+}
+
+#menu{
+   font-family: Arial, Helvetica, sans-serif;
+   background: #333;
+   width: 100%;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+}
+
+#menu ul {
+    line-height: 46px;
+}
+
+#menu ul li{
+    height: 46px;
+    display: inline-block;
+    transition: all 500ms;
+}
+
+#menu ul li:hover{
+    background: #235e3d;
+}
+
+#menu ul li a{
+    display: block;
+    color:white;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#post{
+    width: 60%;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.post h2{
+    font-size: 30px;
+    color: #333;
+}
