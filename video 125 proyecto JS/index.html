@@ -7,9 +7,30 @@
     <title>Proyecto JS</title>
     <!-- Estilos css -->
     <link rel="stylesheet" href="css/styles.css">
+    <link id="theme" rel="stylesheet" href="css/green.css">
+    <!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+<!-- Slider -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/es-us.js"></script>
+
+
+<!--Scripts  -->
+<script src="js/main.js"></script>
 </head>
 <body>
-    
+  
+<div id="changeTheme">
+    <div id="toGreen"></div>
+    <div id="toRed"></div>
+    <div id="toBlue"></div>
+</div>
+
 <section id="global">
     <!-- Cabecera -->
     <header>
@@ -28,23 +49,55 @@
 
 
 <!-- Slider -->
-    <div id="slider"> aqui va el slider</div>
+    <div id="slider"> 
+        <div class="bxslider">
+            <div><img src="./img/hojas.jpg" title="Hojas"></div>
+            <div><img src="./img/rojo.jpg" title="Rojo"></div>
+            <div><img src="./img/cielo.jpg" title="Cielo"></div>
+        </div>
+    </div>
 
 
 <!--Contenido  -->
     <section id="content">
 
         <div id="post">
-            <article class="post">
+            <!-- <article class="post">
                 <h2>Titulo del articulos</h2>
                 <span class="date">Fecha de publicacion</span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis eius facere sequi rerum aperiam. Magni maxime modi placeat possimus dicta, et, minus natus itaque, pariatur similique porro aliquid repellat.Lorem ipsum dolor sit amet consectetur adipisicing elitEum officiis eius facere sequi rerum aperiam. Magnmaxime modi placeat possimus dicta, et, minus natuitaque, pariatur similique porro aliquid repellat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione odit molestiae in nihil rem, commodi voluptatibus, officiis ab voluptatum esse quia repudiandae! Molestiae nulla sequi unde saepe minus fuga atque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem reprehenderit harum, delectus quidem unde ab, obcaecati ratione autem facilis iure odio eius voluptas temporibus veniam? Dolores architecto rem fuga accusantium!
                 </p>
-            </article>
+                <a href="#" class="buton-more">Leer mas</a>
+            </article> -->
         </div>
 
+        
+            
+
+        <aside id="sidebar">
+            <div id="about">
+                <h4><span>Quien soy</span></h4>
+                <img src="./img/caracol.jpg" alt="" srcset="">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quod commodi nesciunt ipsam nam, ut ipsum impedit cupiditate possimus amet, labore autem sint quae aliquid veritatis id porro minus temporibus!</p>
+            </div>
+
+            <div id="login">
+                <h4><span>Identificate</span></h4>
+                    <form action="">
+                        <label for="name">Nombre: </label>
+                        <input type="text" name="name" id="name" placeholder="Nombre">
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                        <label for="email">Email:</label>
+                         <input type="email" name="email" id="email" placeholder="Email">
+                        <label for="pass">Contraseña:</label>
+                         <input type="password" name="pass" id="pass" placeholder="Contraseña">
+                        <input type="submit" value="Enviar">
+                    </form>
+            </div>
+
+        </aside>
         <div class="clearfix"></div> 
-        <aside id="sidebar"></aside>
     </section>
 </section>
 
@@ -53,6 +106,6 @@
     Master de JS &copy;
 </footer>
 
-    <script src="js/main.js"></script>
+    
 </body>
 </html>
