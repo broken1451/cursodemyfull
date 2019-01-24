@@ -56,7 +56,7 @@ var posts = [
 
 
   //Selector de themas
-    //href="css/green.css"
+        //href="css/green.css"
 
   var thema =  $("#theme");
   $("#toGreen").click(function () { 
@@ -78,5 +78,52 @@ var posts = [
   });
 
     
+
+//Scroll ir arriba
+
+    $(".subir").click(function (e) { 
+        e.preventDefault();
+      $("html,body").animate({
+          scrollTop:0
+      },500);
+        return false;
+    });
+
+
+
+
+// login falso
+
+    $("#login form").submit(function (e) { 
+     
+        var nombre = $("#name").val();
+            localStorage.setItem("name",nombre);
+            console.log(nombre);
+    });
+    
+    
+    
+    
+var variableNombre = localStorage.getItem("name");
+
+if (variableNombre != null && variableNombre != undefined && variableNombre != " ") {
+
+    $("#about p").html(" <br> Welcome " + variableNombre );
+    $("#about p").append("<a href='#' id='logout'> Cerrar sesion </a>");
+    $("#login").hide();
+    $("#logout").click(function () { 
+        localStorage.clear();
+        location.reload();//redireccionar la pagina a la princial con todo
+        return false;
+    });
+}    
+
+
+console.log(variableNombre);
+
+
+
+
     console.log(posts);
 });
+

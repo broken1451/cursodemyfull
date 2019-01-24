@@ -156,6 +156,14 @@ form input[type="submit"]{
     cursor: pointer;
 }
 
+form input[type="reset"]{
+    background: #eee;
+    padding: 10px;
+    border:1px solid gray;
+    color: #333;
+    cursor: pointer;
+}
+
 footer{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -207,4 +215,11 @@ footer{
 
 #toBlue{
     background: #1f87c4;
+}
+
+.subir{
+    display: block;
+    color: white;
+    text-decoration: none;
+    float: right;
 }
