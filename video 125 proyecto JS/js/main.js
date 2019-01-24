@@ -90,8 +90,6 @@ var posts = [
     });
 
 
-
-
 // login falso
 
     $("#login form").submit(function (e) { 
@@ -100,9 +98,6 @@ var posts = [
             localStorage.setItem("name",nombre);
             console.log(nombre);
     });
-    
-    
-    
     
 var variableNombre = localStorage.getItem("name");
 
@@ -118,12 +113,7 @@ if (variableNombre != null && variableNombre != undefined && variableNombre != "
     });
 }    
 
-
 console.log(variableNombre);
-
-
-
-
-    console.log(posts);
+console.log(posts);
 });
 
