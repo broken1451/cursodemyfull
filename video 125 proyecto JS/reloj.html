@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto JS</title>
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link id="theme" rel="stylesheet" href="css/green.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/es-us.js"></script>
+   
+
+    <!--Scripts  -->
+    <script src="js/main.js"></script>
+</head>
+<body>
+  
+<div id="changeTheme">
+    <div id="toGreen"></div>
+    <div id="toRed"></div>
+    <div id="toBlue"></div>
+</div>
+
+<section id="global">
+    <!-- Cabecera -->
+    <header>
+            
+    <div id="logo"><h1>Proyecto JS</h1></div>  
+    <div class="clearfix"></div>   
+            <nav id="menu">
+                <ul >
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reloj.html">Reloj</a></li>
+                    <li><a href="about.html">Sobre mi</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+    </header>
+
+
+
+<!--Contenido  -->
+    <section id="content">
+
+        <div id="box">
+            <!-- Cargar un reloj -->
+                <div id="reloj">
+
+                </div>
+        </div>
+   
+        
+           
+        
+        <aside id="sidebar">
+            <div id="about">
+                <h4><span>Quien soy</span></h4>
+                <img src="./img/caracol.jpg" alt="" srcset="">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quod commodi nesciunt ipsam nam, ut ipsum impedit cupiditate possimus amet, labore autem sint quae aliquid veritatis id porro minus temporibus!</p>
+            </div>
+
+            <div id="login">
+                <h4><span>Identificate</span></h4>
+                    <form action="" >
+                        <label for="name">Nombre: </label>
+                        <input type="text" name="name" id="name" placeholder="Nombre">
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                        <label for="email">Email:</label>
+                         <input type="email" name="email" id="email" placeholder="Email">
+                        <label for="pass">Contraseña:</label>
+                         <input type="password" name="pass" id="pass" placeholder="Contraseña">
+                        <input type="submit" value="Enviar" id="submit">
+                        <input type="reset" value="Borrar">
+                    </form>
+            </div>
+
+        </aside>   
+        <div class="clearfix"></div>
+    </section>
+    
+</section>
+
+
+<footer>
+    Master de JS &copy;
+    <a href="#" class="subir">Ir arriba</a>
+</footer>
+
+    
+</body>
+</html>
