@@ -144,14 +144,25 @@ if (window.location.href.indexOf("reloj") > -1){
    setInterval(function () { 
     var reloj = moment().format("hh:mm:ss a");
     $("#reloj").html(reloj);
-    },1000)
- 
-
-   console.log(reloj);
-
-
+    console.log(reloj);
+    },1000);
 }
 
+//Validacion 
+if (window.location.href.indexOf("contacto") > -1){
+
+    // $("#fecha").datepicker({
+    $("form input[name='fecha']").datepicker({
+       dateFormat:"dd-mm-yy"
+    });
+
+    $.validate({
+        lang: 'es',
+        errorMessagePosition : 'top',
+        scrollToTopOnError : true
+     });
+
+}
 
 });
 
