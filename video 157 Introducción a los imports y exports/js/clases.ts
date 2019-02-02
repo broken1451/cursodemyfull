@@ -6,7 +6,7 @@ console.log("tsc -w *.ts");
 
 
 //Clase (molde del objeto)
-class Clases {
+export class Clases {
     
     //Propiedades (caracteristicas del objeto)
         //public puedo acceder a los metodos y propiedades de cualquier lugar
@@ -43,10 +43,10 @@ class Clases {
 }
 
 
-var camiseta = new Clases("rojo","Manga corta","cocodrilo","xl",45);
+/* var camiseta = new Clases("rojo","Manga corta","cocodrilo","xl",45);
 
 camiseta.setColor("Rojooooooooo");
-  //camiseta.getColor();
+  camiseta.getColor();
   console.log(camiseta.getColor());
 console.log(camiseta);
 
@@ -54,9 +54,9 @@ console.log(camiseta);
 var pantalon = new Clases("Azul","shrot","nike","xl",15);
 
 pantalon.setColor("Blueeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    // pantalon.getColor();
+    pantalon.getColor();
     console.log( pantalon.getColor());
-console.log(pantalon);
+console.log(pantalon); */
 
 
 

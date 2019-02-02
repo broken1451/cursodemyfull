@@ -1,12 +1,17 @@
 console.log("Hola mundo con typescript");
 console.log("tsc -w *.ts");
 
+//interface
+interface CamposObligatorios{
+    setColor(color:string);
+    getColor();
+}
 
-// C:\xampp\htdocs\xampp\Curso udemy Mjs\video 149 Compilación  Transpilación automática\js
+
 
 
 //Clase (molde del objeto)
-class Clases {
+ class Clases implements CamposObligatorios {
     
     //Propiedades (caracteristicas del objeto)
         //public puedo acceder a los metodos y propiedades de cualquier lugar
@@ -43,10 +48,41 @@ class Clases {
 }
 
 
+//Herencia
+
+class Sudadera extends Clases  {
+
+    public capucha:boolean;
+
+    setCapucha(capucha:boolean){
+        this.capucha = capucha;
+    }
+
+    getCapucha():boolean{
+        return this.capucha;
+    }
+
+}
+
+
+
 var camiseta = new Clases("rojo","Manga corta","cocodrilo","xl",45);
 
+console.log(camiseta)
+
+
+
+var sudadera = new Sudadera("fdf","fsdf","fsfsdfsd","fdfdsfsdfsdfsd",12);
+sudadera.setColor("Gris plateado");
+sudadera.setCapucha(false);
+console.log(sudadera.getCapucha());
+console.log(sudadera.getColor());
+console.log(sudadera);
+
+/* var camiseta = new Clases("rojo","Manga corta","cocodrilo","xl",45);
+
 camiseta.setColor("Rojooooooooo");
-  //camiseta.getColor();
+  camiseta.getColor();
   console.log(camiseta.getColor());
 console.log(camiseta);
 
@@ -54,10 +90,9 @@ console.log(camiseta);
 var pantalon = new Clases("Azul","shrot","nike","xl",15);
 
 pantalon.setColor("Blueeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    // pantalon.getColor();
+    pantalon.getColor();
     console.log( pantalon.getColor());
-console.log(pantalon);
-
+console.log(pantalon); */
 
 
 

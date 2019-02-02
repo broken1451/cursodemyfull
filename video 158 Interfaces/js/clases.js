@@ -1,6 +1,5 @@
 console.log("Hola mundo con typescript");
 console.log("tsc -w *.ts");
-// C:\xampp\htdocs\xampp\Curso udemy Mjs\video 149 Compilación  Transpilación automática\js
 //Clase (molde del objeto)
 var Clases = /** @class */ (function () {
     // Metodos (funciones o acciones del objeto)
@@ -23,12 +22,18 @@ var Clases = /** @class */ (function () {
     return Clases;
 }());
 var camiseta = new Clases("rojo", "Manga corta", "cocodrilo", "xl", 45);
-camiseta.setColor("Rojooooooooo");
-//camiseta.getColor();
-console.log(camiseta.getColor());
 console.log(camiseta);
-var pantalon = new Clases("Azul", "shrot", "nike", "xl", 15);
+/* var camiseta = new Clases("rojo","Manga corta","cocodrilo","xl",45);
+
+camiseta.setColor("Rojooooooooo");
+  camiseta.getColor();
+  console.log(camiseta.getColor());
+console.log(camiseta);
+
+
+var pantalon = new Clases("Azul","shrot","nike","xl",15);
+
 pantalon.setColor("Blueeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-// pantalon.getColor();
-console.log(pantalon.getColor());
-console.log(pantalon);
+    pantalon.getColor();
+    console.log( pantalon.getColor());
+console.log(pantalon); */
