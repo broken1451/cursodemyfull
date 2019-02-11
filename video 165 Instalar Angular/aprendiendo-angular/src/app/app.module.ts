@@ -8,6 +8,7 @@ import { CursosComponent } from './cursos/cursos.component';
 
 
 
+
 @NgModule({ // configura los modulos
   declarations: [// cargar los componentes,diretivas y pipes
     AppComponent,
