@@ -1,0 +1,16 @@
+<input type="text" name="" id="" [(ngModel)]="userID" (keyup.enter)='cargaUsuario()'>
+<div *ngIf="!user">
+  <br>
+  <i class="fa fa-sync fa-5x fa-spin"></i>
+</div>
+
+<div *ngIf="user">
+  <h2>Usuarios:</h2>
+  <!-- <img src="{{user.avatar}}" style='width: 200px'> -->
+  <h3>{{user.first_name + '' + user.last_name}} </h3>
+  <img [src]="user.avatar" style='width: 200'>
+
+  <ul>
+    <!-- <li *ngFor="let usuarios of user">{{usuarios.first_name}}</li> -->
+  </ul>
+</div>

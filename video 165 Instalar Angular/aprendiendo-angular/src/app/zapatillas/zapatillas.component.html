@@ -1,7 +1,20 @@
 <h2>{{titulo}}</h2>
+<p>Add marca</p>
+<p>
+    <input type="text" name="name" id="name" [(ngModel)]="miMarca" (blur)="onBlur()">
+    <input type="text" name="name" id="name" [(ngModel)]="miMarca" (keyup.enter)="mostrarPalabra()">
+    <button (click)="verMarca()">Ver marca</button>
+    <button (click)="addMarca()">Add marca</button>
+    <button (click)="deleteMarca()">Delete marca</button>
+</p>
+<p><strong>{{miMarca}}</strong></p>
+
 <p>Compra las zapatillas de las mejores marcas</p>
     <ul>
-        <li *ngFor=" let marca of marcas; let i = index">{{ i+1 + ' ' +marca}}</li>
+        <li *ngFor=" let marca of marcas; let i = index">
+            {{ i+1 + ' ' +marca}}
+            <button (click)="borrarMarca(i)">Borrar Marca</button>
+        </li>
     </ul>
 
 <p>Las zapatillas que tenemos disponibles son:</p>
@@ -12,7 +25,12 @@
      <li *ngFor="let zapatilla of zapatillas">
         <!-- <div *ngIf="zapatilla.stock"> -->
             <!-- <span *ngIf="!zapatilla.stock">  {{zapatilla.nombre}} - <strong>{{zapatilla.precio}} </strong></span> -->
-            <span [ngStyle]="{'text-decoration':!zapatilla.stock ? 'line-through':'none'}">  {{zapatilla.nombre}} - <strong>{{zapatilla.precio}} $ </strong></span>
+            <span [ngStyle]="{'text-decoration':!zapatilla.stock ? 'line-through':'none'}">  {{zapatilla.nombre}} - <strong [class.altoPrecio]= "zapatilla.precio >= 80"
+            [ngClass]="{
+                'fondoRojo':zapatilla.precio >= 100,
+                'subrayado':zapatilla.marca =='nike'}">
+            <!--  [ngClass]="['fondoRojo', 'subrayado']" = class=" fondoRojo subrayado" -->
+                {{zapatilla.precio}} $ </strong></span>
             <!-- <span *ngIf="zapatilla.precio < 80" [style.background]="zapatilla.precio < 80 has esto'green'sino'black' "> !En Oferta!</span> -->
       
         <span *ngIf="zapatilla.precio < 80" [style.background]="zapatilla.precio < 80 ? 'green':'black' "
@@ -23,3 +41,29 @@
     </li>
     
     </ul>
+
+
+<p>El color de la mayoria de nuestras zapatillas es: </p>
+<p><input type="text" name="name" id="name" [(ngModel)]="color"></p>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'yellow'">
+        <!-- El color predominante es el <span style="background:yellow">amarillo</span>-->
+        El color predominante es el <span [ngStyle]="{'background':color}">{{color}}</span>
+    </li>
+    <li *ngSwitchCase="'red'">
+        El color predominante es el <span [ngStyle]="{'background':color}">rojo</span> 
+    </li>
+    <li *ngSwitchCase="'blue'">
+        El color predominante es el <span [ngStyle]="{'background':color}">azul</span> 
+    </li>
+    <li *ngSwitchCase="'orange'">
+        El color predominante es el <span [ngStyle]="{'background':color}">naranja</span>
+    </li>
+</ul>
+
+
+
+
+
+
+

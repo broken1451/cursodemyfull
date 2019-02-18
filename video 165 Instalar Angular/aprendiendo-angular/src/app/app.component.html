@@ -11,6 +11,32 @@
   <p>Vamos a aprender angular juntos</p>
   <p>{{descripcion}}</p>
 
+  <nav>
+    <!-- 
+
+    <a [routerLink]="['/home']" [routerLinkActive]="['active']" >Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatilla']" [routerLinkActive]="['active']" >Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']" [routerLinkActive]="['active']" >Cursos</a>
+    &nbsp;
+    <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']" >Video Juegos</a>
+
+     -->
+
+    <a [routerLink]="['/home']" routerLinkActive = "active" >Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatilla']" routerLinkActive= "active" >Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']" routerLinkActive=" active" >Cursos</a>
+    &nbsp;
+    <a [routerLink]="['/videojuego']" routerLinkActive=" active" >Video Juegos</a>
+    &nbsp;
+    <a [routerLink]="['/externo']" routerLinkActive=" active" >Externo</a>
+    
+  </nav>
+<hr>
+
 <!-- 
   <button (click)="ocultaVideoJuegos()"> Ocultar  </button>
   <button (click)="mostrarVideoJuegos()"> Mostrar  </button> -->
@@ -22,8 +48,8 @@
   <app-zapatillas></app-zapatillas> 
   <app-cursos></app-cursos>    -->
 
-  <app-zapatillas></app-zapatillas> 
-
+  <!-- <app-zapatillas></app-zapatillas>  -->
+      <router-outlet></router-outlet>
   </div>
 
   
