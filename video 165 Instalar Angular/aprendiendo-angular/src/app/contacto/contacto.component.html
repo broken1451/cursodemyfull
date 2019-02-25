@@ -1,0 +1,25 @@
+<h2>Contacto</h2>
+<!-- Transformar un formulario normal a formulario angular -->
+<form #formContacto='ngForm' (ngSubmit)='onSubmit(formContacto)' >
+  
+  <label for="nombre">Nombre</label><br>
+  <!-- Hacer q cada campo sea parte de un formulario de angular -->
+  <input required pattern="[a-zA-Z]+" type="text" name="nombre" id="nombre" #nombre='ngModel' [(ngModel)]="usuario.nombre"> <br>
+  <span *ngIf="nombre.touched && !nombre.valid"> El nombre es obligatorio </span>
+
+  <label for="apellido">Apellido</label><br>
+  <input required pattern="[a-zA-Z]+" type="text" name="apellido" id="apellido" #apellido='ngModel' [(ngModel)]="usuario.apellido"> <br>
+  <span *ngIf="apellido.touched && !apellido.valid"> El apellido es obligatorio </span>
+
+  <label for="email">Email</label><br>
+  <input required type="email" name="email" id="email" #email='ngModel' [(ngModel)]="usuario.email"> <br>
+  <span *ngIf="email.touched && !email.valid"> El email es obligatorio </span>
+
+  <label for="mensaje">Mensaje</label><br>
+  <textarea required name="mensaje" id="mensaje" cols="30" rows="10" #mensaje='ngModel' [(ngModel)]="usuario.mensaje"></textarea><br>
+  <span *ngIf="mensaje.touched && !mensaje.valid"> El mensaje es obligatorio </span>
+
+  <input [disabled]='!formContacto.form.valid' type="submit" value="Enviar">
+  <input type="reset" value="Reset">
+</form>
+{{mostrarDataForm}}

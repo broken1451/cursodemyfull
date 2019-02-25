@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
 
 @Injectable()
-
 export class ZapatillaService {
+
 public zapatillas: Array<Zapatilla>;
 
 constructor() {

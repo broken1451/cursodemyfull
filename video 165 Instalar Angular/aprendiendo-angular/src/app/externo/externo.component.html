@@ -1,4 +1,35 @@
-<input type="text" name="" id="" [(ngModel)]="userID" (keyup.enter)='cargaUsuario()'>
+<h1>Crear usuario</h1>
+<form #newUser='ngForm' (ngSubmit)='onSubmit(newUser)'>
+  <p>
+    <label for="nombre">Nombre: </label>
+    <input required type="text" name="nombre" #name='ngModel' [(ngModel)]="newuser.name">
+    <span *ngIf="name.touched && !name.valid">El nombre no es valido</span>
+  </p>
+
+  <p>
+    <label for="job">Job: </label>
+    <input required type="text" name="job"  #job='ngModel' [(ngModel)]="newuser.job">
+    <span *ngIf="job.touched && !job.valid">El job no es valido</span>
+  </p>
+
+  <input type="submit" value="Guardar Usuario" [disabled]='!newUser.form.valid'>
+</form>
+
+<div *ngIf="usuarioGuardado">
+  <h3>Usuario Guardado</h3>
+  {{usuarioGuardado}}
+  {{usuarioGuardado.name + ' '+ usuarioGuardado.job}} 
+</div>
+
+<hr>
+
+<h2> Pipes</h2>
+<p>{{fecha | date:'dd/MM/yy'}}</p>
+<p>{{fecha | date:'fullDate' | uppercase}}</p>
+<p>{{'HOLA MUNDO ESTOY USANDO PIPES' | lowercase  }}</p>
+<p>{{4 | calculadora:100}}</p>
+<hr>
+<input type="text" [(ngModel)]="userID" (keyup.enter)='cargaUsuario()'>
 <div *ngIf="!user">
   <br>
   <i class="fa fa-sync fa-5x fa-spin"></i>
@@ -7,7 +38,7 @@
 <div *ngIf="user">
   <h2>Usuarios:</h2>
   <!-- <img src="{{user.avatar}}" style='width: 200px'> -->
-  <h3>{{user.first_name + '' + user.last_name}} </h3>
+  <h3>{{user.first_name + ' ' + user.last_name}} </h3>
   <img [src]="user.avatar" style='width: 200'>
 
   <ul>

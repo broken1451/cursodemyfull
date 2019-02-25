@@ -11,10 +11,18 @@ export class ExternoComponent implements OnInit {
 
   public user: any;
   public userID: any;
+  public fecha: any;
+  public newuser: any;
+  public usuarioGuardado: any;
 
   constructor(private peticionesService: PeticionesService ) {
 
     this.userID = 1;
+    // llenar el arreglo por post como lo indica el api
+    this.newuser = {
+      'name': '',
+      'job': ''
+    };
 
   }
 
@@ -28,7 +36,8 @@ export class ExternoComponent implements OnInit {
     //   console.log(datos);
     //   console.log(datos.data);
     // }, (error) => { console.log(error); });
-     this.cargaUsuario();
+    this.fecha = new Date();
+    this.cargaUsuario();
   }
 
 
@@ -39,6 +48,16 @@ export class ExternoComponent implements OnInit {
       console.log(datos);
       console.log(datos.data);
     }, (error) => { console.log(error); });
+  }
+
+  onSubmit(form) {
+    this.peticionesService.addUser(this.newuser)
+    .subscribe((usuarioNuevo) => {
+      this.usuarioGuardado = usuarioNuevo;
+      console.log(usuarioNuevo);
+      form.reset();
+    }, (error) => {console.log('El error es: ', error);
+  });
   }
 
 

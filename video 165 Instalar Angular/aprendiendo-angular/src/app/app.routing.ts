@@ -9,6 +9,8 @@ import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
+import { ContactoComponent } from './contacto/contacto.component';
+
 
 
 // array de rutas
@@ -36,6 +38,7 @@ const routes: Routes = [
     // { path: 'cursos/:parametros', component: CursosComponent },
     { path: 'cursos', component: CursosComponent },
     { path: 'externo', component: ExternoComponent},
+    { path: 'contacto', component: ContactoComponent},
     { path: 'cursos/:nombre/:followers', component: CursosComponent },
     { path: '**', component: HomeComponent }
 ];
