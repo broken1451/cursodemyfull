@@ -22,9 +22,10 @@ public mostrarDataForm: any;
   onSubmit(formContacto: any) {
     console.log('Funciona el onSubmit');
     this.mostrarDataForm = this.usuario.nombre;
+    console.log('El objeto usuario como forma completa tiene: ', this.usuario);
+    console.log('El objeto usuario tiene como valor una propiedad llamada nombre: ', this.usuario.nombre);
+    console.log('El formulario tiene como valor completo:', formContacto);
     // formContacto.reset();
-    console.log(this.usuario);
-    console.log(this.usuario.nombre);
   }
 
 }

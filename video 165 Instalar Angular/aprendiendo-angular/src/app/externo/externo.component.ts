@@ -50,7 +50,7 @@ export class ExternoComponent implements OnInit {
     }, (error) => { console.log(error); });
   }
 
-  onSubmit(form) {
+  onSubmit(form: any) {
     this.peticionesService.addUser(this.newuser)
     .subscribe((usuarioNuevo) => {
       this.usuarioGuardado = usuarioNuevo;

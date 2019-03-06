@@ -1,8 +1,8 @@
 <h2>{{titulo}}</h2>
 <p>Add marca</p>
 <p>
-    <input type="text" name="name" id="name" [(ngModel)]="miMarca" (blur)="onBlur()">
-    <input type="text" name="name" id="name" [(ngModel)]="miMarca" (keyup.enter)="mostrarPalabra()">
+    <input type="text" name="miMarca" id="name" [(ngModel)]="miMarca" (blur)="onBlur()">
+    <input type="text" name="miMarca" id="name" [(ngModel)]="miMarca" (keyup.enter)="mostrarPalabra()">
     <button (click)="verMarca()">Ver marca</button>
     <button (click)="addMarca()">Add marca</button>
     <button (click)="deleteMarca()">Delete marca</button>

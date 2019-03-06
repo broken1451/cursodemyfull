@@ -34,7 +34,7 @@ addUser(user: any): Observable<any> {
 
   const parametros = JSON.stringify(user);
   const header = new HttpHeaders().set('content-type', 'application/json');
-// return this.httpClient.post(this.url + 'api/users', parametros a guardar, {headers: header});
+// return this.httpClient.post(this.url + 'api/users', parametros a guardar(objeto a json a guardar), {headers: header});
   return this.httpClient.post(this.url + 'api/users', parametros, {headers: header});
 }
 
