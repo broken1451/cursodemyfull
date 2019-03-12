@@ -2,6 +2,7 @@
 
 var ProyectModel = require('../models/proyectModels'); // importar el modelo
 
+var fs = require('fs'); //fs file system
 
 
 //metodos / devolver un objeto json
@@ -48,7 +49,6 @@ var controller= {
            
             console.log('El proyectStored tiene como valor: ', proyectStored);    
             return res.status(200).send({
-                
                 proyectStored:proyectStored
             });
             
@@ -105,7 +105,7 @@ var controller= {
 
    // Metodo de obtener todos los  productos de la BD
    getProyects: function (req, res) {
-       // ProyectModel.find({}) saca todos los documentos q hay en la bd
+       // ProyectModel.find({year:2019}) saca todos los documentos q hay en la bd
        // ProyectModel.find({}).exec()  cuando ya saque todos los resultados ejecutamos una funcion de callback
        // ProyectModel.find({}).sort('-year / year').exec((err, proyects) => { ordenar por ano
     ProyectModel.find({}).sort('year').exec((err, proyects) => {
@@ -125,7 +125,6 @@ var controller= {
         console.log('El valor de proyects es: ', proyects); 
         return res.status(200).send(
             {proyects:proyects});
-            
         });  
    },
 
@@ -183,6 +182,71 @@ var controller= {
     });
 
          console.log('El valor de proyectId es: ', proyectId); 
+   },
+
+   // Metodo para subir imagenes 
+   uploadImage: function (req, res) {
+        //recojer un parametro q vendra por la url
+         var proyectId = req.params.id;
+        
+         var fileName = 'imagen no subida';
+         
+         //req.files no existe en nodejs hay q usar un plugin 
+         if (req.files) {
+             console.log('El req.files tiene como valor: ', req.files);
+            
+            // sacar valores de la imagen
+			var filePath = req.files.image.path;
+			var fileSplit = filePath.split('\\');
+            var fileName = fileSplit[1];
+            var extensionSplit = fileName.split('.');
+            var fileExtension = extensionSplit[1]
+
+                if (fileExtension == 'png' || fileExtension == 'jpg' || fileExtension == 'jpeg' || fileExtension == 'gif') {
+                
+                  ProyectModel.findByIdAndUpdate(proyectId,{image:fileName},{new:true},(err,proyectUpdate) => {
+                
+                    if (err) {
+                        console.log('El error  al actualizar la bd es: ', err);
+                        return res.status(500).send({message:'La imagen no se ha subido'});
+                    }
+    
+                    if (!proyectUpdate) {
+                        console.log('El proyectUpdate tiene como valor: ', !proyectUpdate);
+                        return res.status(404).send({message:'El proyecto no existe y no se puede asiganr una imagen'});
+                    }
+    
+                    console.log('El valor de proyectUpdate es: ', proyectUpdate); 
+                    return res.status(200).send({proyectUpdate:proyectUpdate});
+    
+                       // return res.status(200).send({file:req.files});
+                     // return res.status(200).send({files:fileName});
+                  });
+             } else {
+                // se usara la libreria fs para borrar un archivo
+                    // fs.unlink(archivo a borrar, funcion de callback(err))
+                fs.unlink(filePath, (err) => {
+                    if (err) {
+                        console.log('El error al borrar es: ', err);
+                        return res.status(500).send({message:'El archivo no se ha podido borrar'});
+                    }
+
+                    return res.status(200).send({message:'La extesion del archivo no es valida'});
+
+                });
+             }
+
+
+         } else {
+            console.log('El fileName tiene como valor: ', fileName);
+            return res.status(200).send({message:fileName}); 
+         }
+         console.log('El fileSplit tiene como valor: ', fileSplit);
+         console.log('El fileName tiene como valor: ', fileName);
+         console.log('El extensionSplit tiene como valor: ', extensionSplit);
+         console.log('El fileExtension tiene como valor: ', fileExtension);
+
+
    }
 
 };

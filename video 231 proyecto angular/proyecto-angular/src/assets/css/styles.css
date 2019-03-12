@@ -1,0 +1,153 @@
+/*Cargar fuentes externas en css*/
+@font-face{
+    font-family: 'yanone';
+    src:'fonts/yanone.ttf'
+}
+
+@font-face{
+    font-family: 'finger';
+    src:'fonts/finger.ttf'
+}
+
+
+/*Estilos generales*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'yanone',Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background: url('../img/pattern.png');
+    background-attachment: fixed;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/*Barra de navegacion / header*/
+
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.8);
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul{
+    display: block;
+    width: 48%;
+    height: inherit;/*heredado del padre*/
+    margin: 0px auto;
+    margin-top: -3px;
+    
+}
+
+header ul li{
+   display: inline-block; 
+   margin: 0px auto;
+   text-align: center;
+   line-height: 90px;
+}
+
+header ul li a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+header ul li a:hover, .active{
+    background:rgba(0, 0, 0, 0.8)
+}
+
+/*Logo*/
+header #logo{
+    font-family: 'finger';
+    font-size: 30px;
+}
+
+#logo a{
+    transition: color 500ms, transform500ms;
+}
+
+header #logo a:hover{
+    background: transparent;
+    color: black;
+    transform: scale(1.50,1.50);
+}
+
+/*Contenedor Principal*/
+
+#content{
+    width: 75%;
+    margin:0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 500px;
+    padding-top: 120px;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;   
+}
+
+/*Footer*/
+
+footer{
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 15px;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+
+/*componente about me*/
+
+#title{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+#title h1{
+    font-family: 'finger';
+    font-size: 60px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+article.about{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: justify;
+}

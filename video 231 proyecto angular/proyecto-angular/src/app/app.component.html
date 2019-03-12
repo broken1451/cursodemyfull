@@ -1,0 +1,36 @@
+<header>
+  
+<nav>
+  <ul class="">
+    <li class=""  routerLinkActive="active">
+      <a class="nav-link" [routerLink]="[ '/about-me' ]">About me </a>
+    </li>
+    <li class="" routerLinkActive="active">
+      <a class="" [routerLink]="[ '/proyectos' ]">Proyectos</a>
+    </li>   
+    <li id="logo" >
+      <a class="">AB </a>
+    </li> 
+    <li class="" routerLinkActive="active">
+      <a class="" [routerLink]="[ '/crear-proyecto' ]">Crear Proyectos</a>
+    </li> 
+    <li class="" routerLinkActive="active">
+      <a class="" [routerLink]="[ '/contacto' ]">Contacto</a>
+    </li> 
+  </ul>     
+</nav>
+
+</header>
+
+
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Master en JS &copy;
+</footer>
+
+
+
