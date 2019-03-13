@@ -1,6 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Http para hacer peticiones
+import { HttpClientModule } from '@angular/common/http';
+
+// Modulos de formularios para usar todas sus propiedades ngmodel,etc
+import { FormsModule } from '@angular/forms';
+
+
+
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +33,9 @@ import { Error404Component } from './components/error404/error404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

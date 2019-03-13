@@ -1,3 +1,44 @@
-<p>
-  create-proyect works!
-</p>
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <form #proyectForm='ngForm' (ngSubmit)= 'onSubmit(proyectForm)'>
+
+      <p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" #name="ngModel" [(ngModel)]="proyect.name">
+      </p>
+      
+      <p>
+        <label for="description">Descripcion</label>
+        <textarea name="description" id="description" #description="ngModel" [(ngModel)]="proyect.description"> </textarea>
+      </p>
+
+      <p>
+        <label for="category">Categoria</label>
+        <input type="text" name="category" id="category" #category="ngModel" [(ngModel)]="proyect.category">
+      </p>
+
+      <p>
+        <label for="year">Año de lanzamiento</label>
+        <input type="number" name="year" id="year" #year="ngModel" [(ngModel)]="proyect.year">
+      </p>
+
+      <p>
+        <label for="langs">Lenguajes Usados</label>
+        <input type="text" name="langs" id="langs" #langs="ngModel" [(ngModel)]="proyect.langs">
+      </p>
+
+      <p>
+        <label for="image">Imagen del proyecto</label>
+        <input type="file" name="image" id="image" #image="ngModel" [(ngModel)]="proyect.image" placeholder="Subir Imagen">
+      </p>
+  
+      <input type="submit" value="Enviar">
+    </form>
+
+</div>
+
+
+
+
+
