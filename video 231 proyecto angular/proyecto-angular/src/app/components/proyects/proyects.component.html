@@ -1,3 +1,20 @@
-<p>
-  proyects works!
-</p>
+<div class="container">
+ <h2>Proyectos</h2>
+ <ul>
+   <li *ngFor="let proyect of proyects" class="proyect">
+     <a [routerLink]="[ '/proyecto', proyect._id ]">
+       <div class="image">
+         <img [src]="url + 'get-image/' + proyect.image" *ngIf="proyect.image"/>
+       </div>
+       <h3>{{proyect.name}}</h3>
+       <p> {{proyect.langs}}</p>
+    </a>
+   </li>
+ </ul>
+</div>
+
+
+  <!-- <img [src]="url + 'getImage/' + proyect.image " *ngIf="proyect.image" alt=""> -->
+       <!-- <img src="../../../../../../video 165 Instalar Angular/backend/upload/__kYo6LK5acFxvezb9a1b43X.png" alt=""> -->
+       <!-- <img src="{{url + 'getImage/' + proyect.image }}" alt=""> -->
+  <!-- <img src="../../../assets/img/robin.png" alt=""> -->

@@ -8,6 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
+// Servicios
+import { ProyectService } from './service/proyect.service';
+import { UploadService } from './service/upload.service';
+
 
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +23,16 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
 import { CreateProyectComponent } from './components/create-proyect/create-proyect.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Error404Component } from './components/error404/error404.component';
+import { DetailsComponent } from './components/details/details.component';
+import { EditComponent } from './components/edit/edit.component';
+import { SliderComponent } from './components/slider/slider.component';
 
+// Importar jquery
+// import * as $ from 'jquery';
+// Declaramos las variables para jQuery
+// usar jquery en angular dentro de un componetes
+declare var jQuery: any;
+declare var $: any;
 
 @NgModule({
   declarations: [
@@ -29,6 +42,9 @@ import { Error404Component } from './components/error404/error404.component';
     CreateProyectComponent,
     ContactComponent,
     Error404Component,
+    DetailsComponent,
+    EditComponent,
+    SliderComponent,
 
   ],
   imports: [
@@ -37,7 +53,7 @@ import { Error404Component } from './components/error404/error404.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProyectService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

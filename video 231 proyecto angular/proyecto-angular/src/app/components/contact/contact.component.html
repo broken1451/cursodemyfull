@@ -1,3 +1,15 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+<h1>Contacto es componente padre y slider el componente hijo</h1>
+<!-- Inputs nos permiten pasar valores desde un componente padre hacia un componente hijo que se este invocando desde ese componente padre -->
+
+tamano Slider
+<input type="number" name="widthSlider" id="" [(ngModel)]="widthSlider">
+<button (click)="cargarSlider()">cargar Slider</button>
+<button (click)="resetSlider()">resetear Slider </button>
+
+<div *ngIf="anchuraToSlider">
+   
+  <app-slider [anchura]='anchuraToSlider' [etiqueta]='captions' ></app-slider>
+</div>
+ 
+</div>
