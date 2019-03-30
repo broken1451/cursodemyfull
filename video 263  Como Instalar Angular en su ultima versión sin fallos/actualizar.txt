@@ -1,0 +1,18 @@
+1) actualizar nodeJS y se descarga la estable
+2) desintalar angular cli:
+	npm unistall -g @angular/cli
+	npm cache verify
+	npm cache clean --force
+	npm install -g @angular/cli@latest
+
+3) Solución al error Vulnerabilities de NPM y Node
+	npm install -g npm@latest
+	--no-audit o npm set audit false
+ 
+4) rxjs-compat solucionar librerias de los observables
+	npm install --save rxjs-compat
+
+5) git
+	git config --global user.name "Adrian Bravo"
+	git config --global email"adrianbravo145@gmail.com"
+	git config --list (ver lo configurado en el sistema con git)

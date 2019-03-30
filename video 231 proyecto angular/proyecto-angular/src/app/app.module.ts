@@ -27,6 +27,9 @@ import { DetailsComponent } from './components/details/details.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
 
+// Directivas
+import { ResaltadoDirective } from './directive/resaltado.directive';
+
 // Importar jquery
 // import * as $ from 'jquery';
 // Declaramos las variables para jQuery
@@ -45,6 +48,7 @@ declare var $: any;
     DetailsComponent,
     EditComponent,
     SliderComponent,
+    ResaltadoDirective,
 
   ],
   imports: [

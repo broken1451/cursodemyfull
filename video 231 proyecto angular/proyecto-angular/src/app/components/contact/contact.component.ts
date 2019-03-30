@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 
 // Declaramos las variables para jQuery
@@ -17,8 +17,12 @@ export class ContactComponent implements OnInit {
 
 
   public widthSlider: number;
-  public anchuraToSlider: number;
+  public anchuraToSlider: any;
   public captions: boolean;
+  public autor: any;
+
+  // @ViewChild('#se recoge la variable') crearPropiedad: any;
+  @ViewChild('textos') textos: any;
 
   constructor() {
     this.captions = true;
@@ -40,15 +44,26 @@ export class ContactComponent implements OnInit {
     //   slideWidth: 1200
     // });
 
+  // tslint:disable-next-line:prefer-const
+  let opcionClasica = document.querySelector('#texto').innerHTML;
+  console.log('La opcion clasica es let opcionClasica = document.querySelector(#texto).innerHTML; es: ', opcionClasica);
+  console.log('La propiedad de viewChild es: ', this.textos);
+  console.log('La propiedad de viewChild es: ', this.textos.nativeElement.textContent);
 
   }
 
+  // Esta seccion es con los inputs y outputs
   cargarSlider() {
     this.anchuraToSlider = this.widthSlider;
   }
 
- resetSlider() {
+  resetSlider() {
    this.anchuraToSlider = null;
- }
+  }
+
+  getAutores(event: any) {
+    this.autor = event;
+    console.log('El evento de output de la etiqueta hija hacia el padre (getAutor)=getAutores($event) es: ', event);
+  }
 
 }

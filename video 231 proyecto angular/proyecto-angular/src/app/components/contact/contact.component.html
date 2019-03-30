@@ -1,15 +1,26 @@
 <div class="container">
 <h1>Contacto es componente padre y slider el componente hijo</h1>
+
+<h1>Aca trabajaremos con @viewChild</h1>
+<div id="texto" #textos appResaltado>
+    <p>
+        Esta es la pagina de contacto, puedes enviarnos cualquier duda
+    </p>
+</div>
+
+
 <!-- Inputs nos permiten pasar valores desde un componente padre hacia un componente hijo que se este invocando desde ese componente padre -->
 
-tamano Slider
-<input type="number" name="widthSlider" id="" [(ngModel)]="widthSlider">
+<!-- Tamano Slider -->
+<!-- <input type="number" name="widthSlider" id="" [(ngModel)]="widthSlider">
 <button (click)="cargarSlider()">cargar Slider</button>
-<button (click)="resetSlider()">resetear Slider </button>
+<button (click)="resetSlider()">resetear Slider </button> -->
 
-<div *ngIf="anchuraToSlider">
-   
-  <app-slider [anchura]='anchuraToSlider' [etiqueta]='captions' ></app-slider>
-</div>
- 
-</div>
+<!-- <div *ngIf="anchuraToSlider"> -->
+<!-- <div> -->
+<!-- <div> -->
+   <!-- <app-slider (propiedad del output)='metodo de componente padre($event para conseguir los datos)' [atributo que yo quiera]='variable que yo quiera' [etiqueta]='captions' ></app-slider> -->
+  <!-- <app-slider (getAutor)='getAutores($event)' [anchura]='anchuraToSlider' [etiqueta]='captions' ></app-slider> -->
+<!-- </div> -->
+ <!-- {{autor.nombre + ' ' + autor.apellido + ' ' + autor.banda}} -->
+<!-- </div> -->
